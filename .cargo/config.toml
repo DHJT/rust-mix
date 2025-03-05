@@ -1,0 +1,4 @@
+# 性能优化 在工作区根目录添加 .cargo/config.toml 配置构建参数：
+[build]
+target-dir = "target"  # 统一构建目录
+rustflags = ["-C", "target-cpu=native"]

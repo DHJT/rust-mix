@@ -1,0 +1,37 @@
+[package]
+name = "Rust-mix"
+version = "0.1.0"
+edition = "2021"
+exclude = ["/tests"]
+
+[workspace]
+members = [
+    "crates/my_lib", "crates/neural_network",
+    "apps/my_bin", "apps/server", "apps/client", "apps/file", "crates/algorithm"
+]
+resolver = "2"          # 统一依赖解析器（推荐）
+
+[dependencies]
+reqwest = { version = "0.11", features = ["blocking", "json"] }
+tokio = { version = "1.43.0", features = ["full"] }
+serde = { version = "1.0.214", features = ["derive"] }
+
+algorithm = { path = "crates/algorithm" }
+my_lib = { path = "crates/my_lib" }
+server = { path = "apps/server" }
+
+
+#diesel = { version = "2.2.4", features = ["sqlite"] }
+
+[dev-dependencies]
+criterion = "0.5.1"
+rand = "0.9.0"
+
+[[bench]]
+name = "compare_algorithms"
+harness = false
+
+[[bench]]
+name = "benchmark"
+harness = false
+

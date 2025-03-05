@@ -1,0 +1,52 @@
+# Rust compiled files
+target/
+
+# Cargo workspace metadata
+Cargo.lock
+
+# IDE specific files
+.idea/
+.vscode/
+
+# Build artifacts
+*.out
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.rlib
+
+# Dependency directories
+deps/
+
+# Rustup toolchains and component installations
+~/.cargo/bin/
+~/.rustup/
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+temp/
+
+# OS specific files
+Thumbs.db
+.DS_Store
+
+# Ignore log files
+*.log
+
+# Ignore database files (if any)
+*.db
+*.sqlite3
+
+# Ignore results from benchmarks
+criterion.rs-out/
+
+# Ignore Rust formatter cache
+rustfmt-cache/
+
+# Ignore generated documentation
+doc/
+

@@ -1,0 +1,4 @@
+# 工具链统一：工作区根目录添加 rust-toolchain.toml 固定 Rust 版本：
+[toolchain]
+channel = "stable"  # 或 "nightly"
+components = ["rustfmt", "clippy"]

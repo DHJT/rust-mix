@@ -1,0 +1,14 @@
+[package]
+name = "my_bin"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+my_lib = { path = "../../crates/my_lib" }
+neural_network = { path = "../../crates/neural_network" }
+
+[profile.dev]
+panic = "unwind"  # 默认值，允许捕获 backtrace
+
+[profile.release]
+panic = "abort"   # 发布模式下终止进程，不生成 backtrace
