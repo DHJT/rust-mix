@@ -6,5 +6,17 @@ edition = "2021"
 [dependencies]
 anyhow = "1.0.95"
 backtrace = "0.3"
-tokio = "1.43.0"
+tokio = { version = "1.43.0", features = ["full", "rt-multi-thread", "macros"] } # 异步支持
 bytes = "1.10.0"
+redis = { version = "0.29.1", features = ["aio", "r2d2", "default"] }
+deadpool-redis = { version = "0.20.0" }
+futures = { version = "0.3", features = ["alloc"] }
+rusqlite = { version = "0.30.0", features = ["bundled"] } # SQLite 操作库
+serde = { version = "1.0", features = ["derive"] }
+sqlx = { version = "0.7", features = ["sqlite", "runtime-tokio-native-tls", "runtime-async-std", "runtime-tokio"] } # 异步 SQLite 驱动
+thiserror = "1.0"
+serde_json = "1.0.132"
+mockall = "0.13.1"
+
+[dev-dependencies]
+tempfile = "3.8"       # 测试用临时文件
