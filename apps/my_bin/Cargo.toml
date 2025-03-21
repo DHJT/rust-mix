@@ -6,6 +6,12 @@ edition = "2021"
 [dependencies]
 my_lib = { path = "../../crates/my_lib" }
 neural_network = { path = "../../crates/neural_network" }
+libc = "0.2" # 用于提供C标准库的绑定，例如printf等
+#cc = "1.2.16"     # 提供 C 兼容类型
+
+[build-dependencies]
+cc = "1.2.16"       # 用于编译 C 代码
+bindgen = "0.71.1" # 生成 Rust 绑定（可选）
 
 [profile.dev]
 panic = "unwind"  # 默认值，允许捕获 backtrace

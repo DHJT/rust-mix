@@ -8,7 +8,22 @@ use neural_network::layer::mean_squared_error;
 
 use std::io;
 
+// 引入自动生成的绑定
+mod bindings;
+use bindings::{add, print_point, Point};
+
 fn main() {
+    // 调用 C 函数（需在 unsafe 块中）
+    unsafe {
+        // 示例 1：调用简单函数
+        let result = add(2, 3);
+        println!("2 + 3 = {}", result);
+
+        // 示例 2：传递结构体
+        let p = Point { x: 10, y: 20 };
+        print_point(p);
+    }
+
     let person = Person::new("Alice".to_string(), 30);
     println!("{}", person.greet());
 
