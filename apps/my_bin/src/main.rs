@@ -1,4 +1,5 @@
 mod trait_1;
+mod atomic_counter;
 use my_lib::Person;
 use my_lib::debug_print;
 use my_lib::utils::{time, file};
