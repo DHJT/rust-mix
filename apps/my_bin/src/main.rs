@@ -1,3 +1,4 @@
+mod trait_1;
 use my_lib::Person;
 use my_lib::debug_print;
 use my_lib::utils::{time, file};
